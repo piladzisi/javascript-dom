@@ -4,6 +4,8 @@ const input = document.querySelector('input');
 const p = document.querySelector('p.description');
 const button = document.querySelector('button.description');
 const li = document.querySelector('li:last-child');
+const addItemInput = document.querySelector('input.addItemInput');
+const addItemButton = document.querySelector('button.addItemButton');
 
 toggleList.addEventListener ('click', () => {
 	if(listDiv.style.display =='none') {
@@ -15,8 +17,11 @@ toggleList.addEventListener ('click', () => {
 }
 });
 
-button.addEventListener('click', () => {
-	li.innerHTML = input.value ;
+addItemButton.addEventListener('click', () => {
+	let ul = document.getElementsByTagName('ul')[0];
+	let li = document.createElement('li');
+	li.textContent = addItemInput.value;
+	ul.appendChild(li);
 });
 
 p.title = 'List Description'
